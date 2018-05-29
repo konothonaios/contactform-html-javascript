@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Αποτελέσματα</title>
+
+		<style>
+		div#problemArea {border:solid 2px red; margin:7px; 
+			padding:5px;
+			background-color:#000000;
+			color: white;
+			float:left;
+			width:40%;
+			} 
+		</style>
+
+
+
+	</head>
+	<body>
+	<h1> Αποτελέσματα Φόρμας Επικοινωνλιας</h1>
+	<div id="problemArea"> Εδώ θα εμφανιστούν οι καταχωρήσεις: </div>
+    <script>
+	// Utilities
+		
+		function getUrlVars() {
+			var vars = {};
+			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+			vars[key] = value;
+		});
+		return vars;
+}
+
+		
+		
+		// AppendTo(ID,TEXT) adds the text to the element with ID.
+		function appendTo(ID,Text){
+			var x = document.getElementById(ID);
+			x.innerHTML = x.innerHTML + "<br/>" + Text + "<br />";
+		}
+		var first = getUrlVars()["name"];
+        var second = getUrlVars()["age"];
+		var third = getUrlVars()["area"];
+		var fourth = getUrlVars()["email"];
+ 
+     //  alert(first);
+     //  alert(second);
+		
+        appendTo("problemArea", first);
+		appendTo("problemArea", second);
+		appendTo("problemArea", third);
+		appendTo("problemArea", fourth);
+	</script>  
+		
+	</body>
+</html>

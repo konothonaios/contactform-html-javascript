@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" /> 
+	<title>Contact Form</title>
+<style>
+	h1 {
+		background-color:blue;
+		color:white;
+	}
+	
+	fieldset {
+		background-image:linear-gradient(to bottom, white, yellow);
+		
+	}
+</style>
+<script>
+		// AppendTo(ID,TEXT) adds the text to the element with ID.
+		function appendTo(ID,Text){
+			var x = document.getElementById(ID);
+			x.innerHTML = x.innerHTML + Text + "<br />";
+		}
+
+		// Clears all the text in the element with ID.
+		function clearElement(ID) {
+			var x = document.getElementById(ID);
+			x.innerHTML = " ";
+		}
+
+		// Writes to an element deleting previous text
+		function writeTo(ID,Text){
+			clearElement(ID);
+			appendTo(ID,Text);
+		}
+
+		// Functions that check the form. In this case we would like return a value.
+		function submitForm(){
+				document.forms['clientForm'].submit();
+				window.location = "output.html"
+			}
+		}
+		//--> 
+</script>
+</head>
+<body>
+	<h1 style="text-align:center;">Φόρμα Επικοινωνίας</h1>
+	<br>
+	<br>
+	<form id="clientform" name="clientform" action="output.html" method="get">
+		<fieldset>
+			<b>Fill out the form with your information</b><br><br>
+			Name: <input type="text" name="name" size="40" required><br><br>
+			Age:<br>
+				17 <input type="radio" name="age" value="17" /><br> 
+				18 to 30 <input type="radio" name="age" value="18to30"/><br>
+				31 to 40 <input type="radio" name="age" value="31to40"/><br>
+				41 to 50 <input type="radio" name="age" value="41to50" /><br>
+				50 to 56 <input type="radio" name="age" value="50to56" /><br>
+				Over 56<input type="radio" name="age" value="50to56" />
+				<br>
+				<br>				
+			Area:<br>
+				<select name="area">
+					<option value="macedonia">Μακεδονία</option>
+					<option value="cyclades">Κυκλάδες</option>
+					<option value="thrace">Θράκη</option>
+					<option value="other">Άλλη</option>
+				</select>
+			<br>
+			<br>
+			E-mail:<br><input name="email" type="email"><br><br>
+			<input type="submit" name="button1"  value="Υποβολή" onclick="submitForm();">
+			<input type="reset" value="Επαναφορά">
+		</fieldset>
+	</form>
+</body>
+</html>
